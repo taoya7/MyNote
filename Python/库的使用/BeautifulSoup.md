@@ -26,7 +26,7 @@ print(soup.head)
 ```
 **提取信息**
 
-获取节点名称 name()
+获取标签名称 **`name`**
 ```python  
 soup = BeautifulSoup(html,'lxml')
 print(soup.li) #则会返回ul下的内容
@@ -35,16 +35,18 @@ print(soup.li.name)
 >>> <li>1</li>
 >>> li
 ```
-获取属性 atters()
+获取属性 **`attrs`**
 ```python
 soup = BeautifulSoup(html,'lxml')
 print(soup.div.attrs)  # {'class': ['box']}
 ```
-获取内容   string()
+获取内容   **text**
 ```python  
 soup = BeautifulSoup(html,'lxml')
-print(soup.li.string)   # 1
+print(soup.ul.text) #ul 下的文字
 ```
+
+
 **子节点和子孙节点**
 
 子节点 contents/children
@@ -91,6 +93,8 @@ print(soup.div.descendants)
 > ## 方法选择器
 
 - **find_all()**
+    - 返回一个list 数组类型
+
 
 name根据节点名
 ```python  
