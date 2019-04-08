@@ -7,6 +7,7 @@
 ### Get请求
 
 - 前端
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +24,9 @@
 </body>
 </html>
 ```
+
 - 后端
+
 ```php
 <?php
 
@@ -75,6 +78,7 @@ echo $_POST["Password"];
 ### 文件上传
 
 - 前端
+
 ```html
 <form action="index.php" method="post" enctype="multipart/form-data">
     <input type="file" name="upFile"><br>

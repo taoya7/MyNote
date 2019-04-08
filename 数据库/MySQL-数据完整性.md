@@ -1,72 +1,33 @@
-<style type="text/css">
-	h1 {
 
-		font-weight: 400;
-	}
-	img {
-		border-radius: 10px;
-		box-shadow: 0 2px 8px rgba(0,0,0,.3);
-	}
-	body {
-		background-color: #FDF6E3;
-/*		margin:0;
-		outline:none;
-		border:none;
-		max-width: 100%;*/
-
-	}
-	import::before{
-		display: inline-block;
-		content: "";
-		width: 10px;
-		height: 10px;
-		background-color: red;
-		margin-right: 10px;
-		border-radius: 50%;
-	}
-	import {
-		font-size:14px;
-		font-weight: bold;
-		padding:0.55rem;
-		border-radius:5px; 
-		color:#eb5055;
-	}
-	.markdown-body blockquote{
-		border-left: 4px solid tomato;
-	}
-</style>
 
 # <center>数据完整性</center>
 
 #### 分类
 
 - 实体完整性
-
 - 域完整性
-
 - 引用完整性
 
 > ### 实体完整性
 
-<import>什么是实体完整性</import>
+
+**什么是实体完整性**
 
 表中的一行(一条记录)代表一个实体（entity）
 
-<import>实体完整性的作用</import>
+**实体完整性的作用**
 
 标识每一行数据不重复。行级约束
 
-<import>约束类型</import>
+**约束类型**
 
 - 主键约束（primary key）
-
 - 唯一约束(unique)
-
 - 自动增长列(auto_increment)
 
 ### 主键约束
 
-<import>特点</import>
+> 特点
 
 数据唯一，而且不能为null
 
@@ -104,7 +65,6 @@ ALTER TABLE student ADD constraint primary key(字段);
 ### 唯一约束
 
 - 指定列的数据不可以重复
-
 - 可以为空
 
 ```
@@ -118,7 +78,6 @@ CREATE TABLE 表名(
 ### 自动增长列
 
 - 指定列的数据自动增长
-
 - 即使删除数据，还是从删除的序号继续向下
 
 ```
@@ -134,9 +93,7 @@ CREATE TABLE 表名(
 限制此单元格的数据正确,不对照此列的其他单元格比较
 
 - 数据类型（数值类型、日期类型、字符串类型）
-
 - 非空约束（not null）
-
 - 默认值约束（default）
 
 ```

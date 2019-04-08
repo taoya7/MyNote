@@ -1,5 +1,4 @@
-#
-PyQuery
+#PyQuery
 
 强大又灵活的网页解析库
 

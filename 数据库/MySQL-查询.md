@@ -1,40 +1,4 @@
-<style type="text/css">
-	h1 {
 
-		font-weight: 400;
-	}
-	img {
-		border-radius: 10px;
-		box-shadow: 0 2px 8px rgba(0,0,0,.3);
-	}
-	body {
-		background-color: #FDF6E3;
-/*		margin:0;
-		outline:none;
-		border:none;
-		max-width: 100%;*/
-
-	}
-	import::before{
-		display: inline-block;
-		content: "";
-		width: 10px;
-		height: 10px;
-		background-color: red;
-		margin-right: 10px;
-		border-radius: 50%;
-	}
-	import {
-		font-size:14px;
-		font-weight: bold;
-		padding:0.55rem;
-		border-radius:5px; 
-		color:#eb5055;
-	}
-	.markdown-body blockquote{
-		border-left: 4px solid tomato;
-	}
-</style>
 
 # <center>查询</center>
 
@@ -67,9 +31,7 @@ select *from 表名
 > 结果集
 
 - 数据库执行DQL语句不会对数据进行改变，而是让数据库发送结果集给客户端
-
 - 通过查询语句查询出来的数据以表的形式展示我们称这个表为虚拟结果集。存放在内存中
-
 - 查询返回的结果集是一张虚拟表
 
 > 查询指定字段的数据
@@ -82,72 +44,61 @@ select field1, field2... from table_name;
 
 条件查询就是在查询时给出WHERE子句，在WHERE子句中可以使用一些运算符及关键字
 
-<import>条件查询运行符及关键字</import>
+**条件查询运行符及关键字**
 
 - =（等于）、!=（不等于）、<>（不等于）、<（小于）、<=（小于等于）、>（大于）、>=（大于等于）
-
 - BETWEEN…AND；值在什么范围
-
-- IN(set)；固定的范围值
-
+- in(set)；固定的范围值
 - IS NULL；（为空） IS NOT NULL（不为空）   
-
 - AND | OR | NOT
 
-<import>Demo</import>
+**Demo**
 
-```sql
-查找性别为男的记录
+```mysql
+# 查找性别为男的记录
 select *from table_name where sex="male";
 
-查找性别为男或者地址为山西的
+# 查找性别为男或者地址为山西的
 select *from table_name where sex="male" or address="shanxi";
 
-查找id=1 2 3的记录
+# 查找id=1 2 3的记录
 select *from table_name where id=1 or id=2 or id=3;
 select *from table_name where id in(1,2,3);
 
-查找name为null的记录
+# 查找name为null的记录
 select *from table_name where name is null;
 
-查找性别不为男的记录
+# 查找性别不为男的记录
 select *from table_name where sex != "male";
 
-查找年龄在18-20的记录
+# 查找年龄在18-20的记录
 select *from table_name where age between 18 and 20;
 ```
 
 > ### 模糊查询（[not]like）
 
-<import>通配符</import>
+**通配符**
 
 -  _  ：任意一个字符
 -  %：任意0-[n]个字符
 
-<import>Demo</import>
+**Demo**
 
-```
-查询姓名由5个字母构成的记录
+```mysql
+# 查询姓名由5个字母构成的记录
 select *from 表名 where  字段 like "_____"; /*一个下划线表示一个字符*/
 
-查询姓名由5个查询姓名由5个字母构成的记录并且最后一个字没有为s
+# 查询姓名由5个查询姓名由5个字母构成的记录并且最后一个字没有为s
 select *from 表名 where 字段 like "____s";
 
-查询以m开头的字母
+# 查询以m开头的字母
 select *from 表名 where 字段 like 'm%';
 
-查询第二个字没有为u的记录
+# 查询第二个字没有为u的记录
 select *from 表名 where 字段 like '_u%';
 
-查询包含s的记录
+# 查询包含s的记录
 select *from 表名 where 字段 like '%s%';
-
-使用换码字符将通配符转义为普通字符
-查询DB_Design课程的课程号和学分。
-      SELECT Cno，Ccredit
-      FROM Course
-      WHERE Cname LIKE 'DB\_Design'      
-                       ESCAPE '\'
 
 ```
 
@@ -182,9 +133,8 @@ select ename  'Name' from emp;
 - 使用谓词 IS NULL 或 IS NOT NULL
 - “IS NULL” 不能用 “= NULL” 代替
 
-```
-查所有有成绩的学生学号和课程号。
-
+```mysql
+# 查所有有成绩的学生学号和课程号。
       SELECT Sno,Cno
       FROM  SC
       WHERE  Grade IS NOT NULL;
@@ -193,11 +143,12 @@ select ename  'Name' from emp;
 
 > ### 对结果进行排序
 
-- 升序：ASC；降序：DESC；缺省值为升序
+- 升序：ASC；
+- 降序：DESC；缺省值为升序
 
-<import>Demo</import>
+**Demo**
 
-```
+```mysql
 -- 降序 在student表中对money字段降序
 
 select *from student order by money desc;
@@ -212,7 +163,7 @@ select *from student order by score asc, age desc;
 > ### 使用函数
 
 
-<import>常用函数</import>
+**常用函数**
 
 - count()
 - max()
@@ -228,17 +179,16 @@ select *from student order by score asc, age desc;
 select field from table_name GROUP BY field1;
 ```
 
-<import>group by + group_concat()</import>
+**group by + group_concat()**
 
 - group_concat(字段名)可以作为一个输出字段来使用
-
 - 表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合
 
 ```sql
 SELECT gender,GROUP_CONCAT(name) from employee GROUP BY gender;
 ```
 
-<import>group by + 聚合函数</import>
+**group by + 聚合函数**
 
 ```
 -- 查询每个部门的部门名称和每个部门的工资和
@@ -251,12 +201,11 @@ SELECT department,COUNT(*) FROM employee GROUP BY department
 SELECT department,COUNT(money) FROM employee WHERE money>1500 GROUP BY department;
 ```
 
-<import>group by + having</import>
+> group by + having
 
 having作用和where一样，但having只能用于group by
 
-
-<import>Having 与 Where 的区别</import>
+> Having 与 Where 的区别
 
 Having是在分组后对数据进行过滤
 
@@ -274,7 +223,6 @@ Where后面不可以使用分组函数
 Limit 参数1，参数2
 
 - 参数1：从哪一行开始查
-
 - 参数2：一共要查几行
 
 ```
@@ -289,15 +237,10 @@ select * from 表名 limit 0,3;
 ## 连接查询
 
 - 广义笛卡儿积
-
 - 等值连接（含自然连接）
-
 - 非等值连接查询
-
 - 自身连接查询
-
 - 外连接查询
-
 - 复合条件连接查询
 
 
@@ -336,7 +279,6 @@ on e.deptno=p.deptno;
 
 - 左外连接
 	- 左边表当中的数据全部查出，右边表当中，只查出满足条件的内容
-
 - 右外连接
 	- 右连接会把右当中的数据全部查出，左表当中只查出满足条件的数据
 
@@ -350,7 +292,7 @@ on s.id=c.id;
 > 非等值连接
 
 ```sql
-查询所有员工的姓名，工资，所在部门的名称以及工资的等级
+-- 查询所有员工的姓名，工资，所在部门的名称以及工资的等级
 select e.ename, e.salary, d.dname, g.grade from emp e
 JOIN dept d ON e.deptno = d.deptno -- 员工表的 部门编号 与 部门表
 JOIN salgrade g ON e.salary BETWEEN g.lowSalary AND g.heghsalary; -- 工资等级
@@ -376,10 +318,9 @@ naturel join score;
 或两个以上SELECT，那么就是子查询语句了
 
 - from形式
-
 - where形式
 
-<import>子查询的限制</import>
+**子查询的限制**
 
 	- 不能使用order by子句
 
@@ -392,10 +333,9 @@ naturel join score;
 合并结果集就是把两个select语句的查询结果合并到一起
 
 - UNION    合并时去除重复记录
-
 - UNION ALL     合并时不去除重复记录
 
-```
+```mysql
 select * from table_name1
 union
 select * from table_name2; 
