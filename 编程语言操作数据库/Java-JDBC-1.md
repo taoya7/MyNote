@@ -74,7 +74,7 @@ public class Main{
         Class.forName("com.mysql.jdbc.Driver");
 
         //2.获取连接对象
-        String url = "jdbc:mysql://localhost:3306/student";//选择地址
+        String url = "jdbc:mysql://localhost:3306/student?serverTimezone=UTC";//选择地址
         String user = "root";//用户名
         String password = ""; //密码
 
