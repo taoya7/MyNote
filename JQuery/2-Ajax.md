@@ -53,7 +53,9 @@ echo $_GET["Password"];
         <input type="submit" value="提交"><br>
     </form>
 ```
+
 - 后端
+
 ```php
 <?php
 
@@ -82,11 +84,12 @@ echo $_POST["Password"];
 ```html
 <form action="index.php" method="post" enctype="multipart/form-data">
     <input type="file" name="upFile"><br>
-    <input type="submit" name="" value="上传"><br> 
+    <input type="submit" name="" value="上传"><br>
 </form>
 ```
 
 - Php
+
 ```php
 <?php
 
@@ -94,7 +97,7 @@ echo $_POST["Password"];
 
 $path_dst = "D:/wamp/www/index.php";
 
-print_r($_FILES); 
+print_r($_FILES);
 $file = $_FILES["upFile"];
 
 //获取上传名称
@@ -232,6 +235,9 @@ function ajax(url,obj,timeout, success, error){
 ```
 
 
+
+
+
 ### 2. Ajax-POST
 
 ```js
@@ -278,8 +284,8 @@ function ajax(option){
     	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     	http.send(str);
     }
-    
-    
+
+
     //4. 监听状态的变化
     http.onreadystatechange = function(){
         if(http.readyState === 4){
@@ -351,6 +357,3 @@ ajax({
 **对象转化JSON字符串**`JSON.stringify()`
 
 **JSON转换对象**`JSON.parse()`
-
-
-

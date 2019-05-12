@@ -1,35 +1,4 @@
-<style type="text/css">
-	h1 {
 
-		font-weight: 400;
-	}
-	img {
-		border-radius: 10px;
-		box-shadow: 0 2px 8px rgba(0,0,0,.3);
-	}
-	html {
-		background-color: #FDF6E3; 
-	}
-	import::before{
-		display: inline-block;
-		content: "";
-		width: 10px;
-		height: 10px;
-		background-color: red;
-		margin-right: 10px;
-		border-radius: 50%;
-	}
-	import {
-		font-size:14px;
-		font-weight: bold;
-		padding:0.55rem;
-		border-radius:5px; 
-		color:#eb5055;
-	}
-	.markdown-body blockquote{
-		border-left: 4px solid tomato;
-	}
-</style>
 
 ### #1.第一个程序
 

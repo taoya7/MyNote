@@ -4,7 +4,8 @@
 
 `File(File parent, String child) `从父抽象路径名和子路径名字符串创建新的 File实例
 
-
+'atom-text-editor, webview.markdown-preview-plus':
+  'ctrl-shift-M': 'markdown-preview-plus:toggle'
 - 如果文件存在则删除否则创建
 ```java
 public class Main {
@@ -206,7 +207,7 @@ public static void main(String[] args) throws Exception {
 		if (file.exists()) {
 			FileReader in = new FileReader(file);
 			char[] data = new char[1024];
-			
+
 			int read = in.read(data);
 			System.out.println(new String(data));
 		}

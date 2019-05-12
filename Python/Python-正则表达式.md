@@ -49,15 +49,10 @@ a| b	|匹配a或b
 ### RE的匹配语法
 
 - **re.match** 从头开始匹配
-
 - **re.search** 匹配包含
-
 - **re.findall** 把所有匹配到的字符放到列表中的元素返回
-
 - **re.splitall** 以匹配到的字符当作列表分隔符
-
 - **re.sub** 匹配字符并替换
-
 - **re.fullmatch** 全部匹配
 
 > group()方法可以取到对象内容
@@ -65,8 +60,8 @@ a| b	|匹配a或b
 
 ### Demo
 
-```
-[0-9]{2}  匹配0~9的数字两个
+```python
+#[0-9]{2}  匹配0~9的数字两个
 
 res = re.search('1*','111123')
 print(res.group())

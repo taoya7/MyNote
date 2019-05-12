@@ -12,6 +12,11 @@ $(window).on('load',function(){
 });
 ```
 
+
+
+
+
+
 ### JQuery核心函数`$();`
 
 **用法**
@@ -30,7 +35,7 @@ console.log(div)
 ```
 
 ```js
-// 接收一个字符串选择器  
+// 接收一个字符串选择器
 var div = $(".box");
 console.log(div)
 /*返回一个JQuery对象，对象中保存了找到的DOM元素*/
@@ -54,7 +59,7 @@ AClass.staticMethod = function(){
     alert("StaticMethod!");
 }
 //调用
-AClass.staticMethod() 
+AClass.staticMethod()
 ```
 
 ```js
@@ -195,7 +200,7 @@ console.log(res);
 - `outerWidth(true)`设置或返回元素的宽度（包括内边距，边框，外边距）
 - `outerHeight(true)`设置或返回元素的高度（包括内边距，边框，外边距）
 
---- 
+---
 
 - `offset([coordinates])` 作用：设置|获取元素距离窗口的偏移位
 ```js
@@ -237,14 +242,16 @@ $("div").animate({
 })
 ```
 
+
+
 ### JQuery-标签处理
 - 获取内容`text()`
 	- 获取标签和内容`html()`
 	- 获取输入框的内容`val()`
 - 设置内容`text(内容)`
-- 获取属性`attr(属性)` 
+- 获取属性`attr(属性)`
 	- **注意**无论找到多少元素，都只会返回第一个元素指定属性节点的值
-- 设置属性`attr(属性,值)` 
+- 设置属性`attr(属性,值)`
 - 删除属性`removeAttr(属性);`
 	- **注意**删除多个属性用空格隔开
 
@@ -294,7 +301,7 @@ replaceAll(selector) //替换顺序不一样
 
 ```js
 //传入false是浅复制 传入true是深复制
-clone([Even[,deepEven]]) 
+clone([Even[,deepEven]])
 ```
 
 [中文文档](http://jquery.cuishifeng.cn/)
