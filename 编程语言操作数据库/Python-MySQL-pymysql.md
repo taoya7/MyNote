@@ -1,6 +1,10 @@
-# <center>Python API</center>
 
-### 数据库的安装  
+# Python API
+
+### 数据库的安装 
+
+**Python**
+
 ```
 pip install PyMySQL
 ```
@@ -62,7 +66,8 @@ db.close()
 - cursor.fetchall() #接受全部的返回结果行
 - rowcount():这是一个只读属性，并返回执行execute()方法后影响的行数
 
-获取所有记录
+**获取所有记录**
+
 ```python
 import pymysql
 
