@@ -13,8 +13,6 @@ SpringBoot启动时会打印一个Banner
 
 ![](image/20190618155451.png)
 
-
-
 # 配置文件
 
 - application.properties
@@ -189,8 +187,6 @@ public class Test {
    ![](E:\Tashi\Desktop\Learning\SpringBoot\image\20190618164709.png)
 
 
-
-
 ## Properties配置
 
 ```xml
@@ -330,7 +326,20 @@ person.pets=dog,cat,tiger
 
    高优先级的会覆盖低优先级的配置，而且配置会形成互补配置
 
-   
+## 自定义properties
+
+新建`tt.properties`
+
+```java
+t.name = Tashi
+t.age = 15
+```
+
+
+
+
+
+
 
    ## 外部配置加载顺序
 
@@ -346,8 +355,80 @@ person.pets=dog,cat,tiger
 
    
 
-   
+## 配置文件
 
-   
+**修改端口号**
 
-   
+```xml
+server.port=9090
+```
+
+**常用配置**
+
+```properties
+#server.port=8080
+#server.address= # bind to a specific NIC
+#server.session-timeout= # session timeout in seconds
+#server.context-path=/spring-boot
+#server.servlet-path= # the servlet path, defaults to '/'
+#server.tomcat.access-log-pattern= # log pattern of the access log
+#server.tomcat.access-log-enabled=false # is access logging enabled
+#server.tomcat.protocol-header=x-forwarded-proto # ssl forward headers
+#server.tomcat.remote-ip-header=x-forwarded-for
+#server.tomcat.basedir=/tmp # base dir (usually not needed, defaults to tmp)
+#server.tomcat.background-processor-delay=30; # in seconds
+#server.tomcat.max-threads = 0 # number of threads in protocol handler
+#server.tomcat.uri-encoding = UTF-8 # character encoding to use for URL decoding
+```
+
+
+
+   ## SpringBoot环境变量读取和属性对象的绑定
+
+凡是被Spring管理的类实现接口`EnvironmentAware` 重写方法`setEnvironment()` 就可以 读取系统环境变量和Application配置文件中的变量
+
+```java
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.EnvironmentAware;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
+
+@Configuration //注解
+public class ReadFile implements EnvironmentAware { //实现接口
+    @Value("${spring.datasource.url}")//注入属性
+    private String datasourceURL;
+
+    @Override
+    public void setEnvironment(Environment environment) {
+        /**
+         *  setEnvironment()是在系统启动的时候被执行
+         * */
+        System.out.println(datasourceURL);
+		//读取系统属性
+        System.out.println(environment.getProperty("JAVA_HOME"));
+		//读取application.properties
+        System.out.println(environment.getProperty("spring.datasource.url"));
+    }
+}
+```
+
+![](E:\Tashi\Desktop\Learning\SpringBoot\image\QQ截图20190705102511.png)
+
+也可以使用`@ConfigurationProperties`读取application属性配置文件
+
+```java
+@ConfigurationProperties(prefix = "person")
+public class Person {
+    private String name;
+    private Integer age;
+    private String sex;
+    private String[] pets;
+	...
+    ...
+}
+```
+
+
+
+
+

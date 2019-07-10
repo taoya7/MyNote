@@ -238,8 +238,7 @@ Hibernate是一个ORM(对象关系映射)框架，JPA是ORM的规范
 spring.jpa.show-sql=true #是否控制台打印SQL
 spring.jpa.database=mysql #对应的数据库是MySQL
 spring.jpa.hibernate.ddl-auto=update #启动时根据实体类更新数据库中的表
-spring.jpa.properties.hibernate.dialect=
-
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 ```
 
 - spring.jpa.hibernate.ddl-auto
@@ -267,10 +266,10 @@ package com.itaolaity.main.mysql;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface  StudentRepository extends JpaRepository<Students,Integer>{}
+public interface  StudentRepository extends JpaRepository<Students,Integer>{
+    
+}
 ```
-
-
 
 创建控制类 返回Json数据
 

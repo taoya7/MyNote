@@ -1,12 +1,3 @@
----
-title: Samba服务实验
-date: 2019-05-15 20:17:10
-tags: [Linux]
-published: true
-hideInList: false
-categories: ["Linux"]
-
----
 # Samba服务器
 
 Samba服务程序现在已经成为在Linux系统与Windows系统之间共享文件的最佳选择

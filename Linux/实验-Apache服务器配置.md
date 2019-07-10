@@ -1,12 +1,3 @@
----
-title: Apache服务器配置
-date: 2019-05-22 12:37:18
-tags: [Linux]
-published: true
-hideInList: false
-feature: 
-categories: ["Linux"]
----
 # 配置Java环境
 
 1. 解压安装JDK
@@ -101,6 +92,9 @@ ServerName localhost:80
 
 ```bash
 service httpd restart
+或者
+systemctl start httpd #启动
+systemctl enable httpd #加入启动项
 ```
 
 3. 修改监听端口
@@ -120,9 +114,9 @@ touch /var/www/html/index.html
 
 ### 配置文件
 
-> 修改家目录
+> **修改家目录**
 
-打开`UserDir disabled`,`UserDir public_html` 将前面的#去掉
+将`UserDir disabled`,`UserDir public_html` 将前面的#去掉
 
 默认的网站数据保存在/var/www/html目录中如果修改目录需要在配置文件中将`DocumentRoot "/var/www/html"` 修改成自己的目录即可
 
@@ -137,7 +131,7 @@ getenforce
 >>> Permissive
 ```
 
->　口令验证
+>　**口令验证**
 
 
 添加账户与密码

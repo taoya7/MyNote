@@ -1,11 +1,3 @@
----
-title: DHCP动态管理主机地址
-date: 2019-05-08 14:17:09
-tags: [Linux]
-categories: ["Linux"]
----
-> DHCP动态管理主机地址
-
 # DHCP(Dynamic Host Configuration Protocol)
 
 DHCP是动态主机配置协议，动态主机设置协议是一个局域网的网络协议，使用UDP协议工作。该协议允许服务器向客户端动态分配 IP 地址和配置信息。DHCP协议支持C/S结构，主要分为客户端和服务端。
@@ -38,9 +30,9 @@ cat /etc/dhcp/dhcpd.conf
 
 **启动**
 
-service dhcpd start //RHEL6
+`service dhcpd start` //RHEL6
 
-systemctl restart dhcpd //RHEL7
+`systemctl restart dhcpd` //RHEL7
 
 ## 配置
 
@@ -194,7 +186,7 @@ shared-network 224-29 {
 - default-lease-time 600; 默认续约时间
 - max-lease-time 7200; 最大续约时间
 
-```
+```shell
 subnet 192.168.1.0 netmask 255.255.255.224 {
   range 192.168.1.100 192.168.1.200; //IP地址池
   option domain-name-servers ns1.internal.example.org;
@@ -222,7 +214,7 @@ host prtsvr{ //设置Host关键字
 
 ## 启动
 
-```
+```powershell
 systemctl start dhcpd  启动Dhcp服务
 
 systemctl enable dhcpd  加入开机启动项
