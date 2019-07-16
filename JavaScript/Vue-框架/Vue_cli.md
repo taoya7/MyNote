@@ -21,8 +21,6 @@ npm -v
 
 前端的脚手架可以理解为能够帮助我们快速构建前端项目的一个工具或平台。就像生活中工地搭建的架子。
 
-
-
 ### vue-cli
 
  Vue 的脚手架工具 vue-cli。默认已经搭建好了一个项目的基本架子。我们在基础上进行相应的修改
@@ -200,6 +198,7 @@ vue create webpack test #生成项目 形成基本结构
 npm install 依赖包
 
 # npm run dev #执行
+
 npm run serve #执行
 ```
 

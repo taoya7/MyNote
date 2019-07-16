@@ -1,13 +1,3 @@
----
-title: ES6知识点
-author: linis
-date: 2019-06-08 16:27:06
-tags:
-    - Vue
-    - JavaScript
-categories: JavaScript
----
-
 # ES6
 
 1. let与const
@@ -27,7 +17,7 @@ ECMAScript6(ES6)是javascript语言的下一代标准
 
 1. let命令作用域局限于当前代码块
 
-```js
+```html
 <script>
     {
         let name = 'Tony';

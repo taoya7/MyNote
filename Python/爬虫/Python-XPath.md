@@ -13,6 +13,14 @@ nodename          选取此节点的所有子节点
 @                 选取属性
 ```
 
+## 插件
+
+谷歌浏览器插件Xpath Helper
+
+![](http://itaolaity.com/20190713215429.png)
+
+
+
 
 > 体验
 
@@ -143,3 +151,19 @@ result = html.xpath('//li[@class="item-3"]/text()')
 
 >>> 2
 ```
+
+## 其他
+
+1. contains.有时候某个属性包含多个值，那么可以使用`contains`函数
+
+   ```python
+   //div[contains(@class, "row")] #选取div的class为row的
+   ```
+
+2. 谓词中的下标从**1**开始
+
+   ```python
+   //div[contains(@class,"row")][2]  
+   ```
+
+   
