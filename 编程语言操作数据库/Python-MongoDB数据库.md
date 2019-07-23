@@ -29,8 +29,6 @@ mongod --config "D:\MongoDB\Server\4.0\mongod.cfg" install
 
 ## MongoDB常见概念
 
-
-
 |   SQL术语   | MongoDB术语 |             说明              |
 | :---------: | :---------: | :---------------------------: |
 |  database   |  database   |            数据库             |

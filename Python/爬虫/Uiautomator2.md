@@ -326,6 +326,9 @@ d.open_notification()
 ```python
 d(text="Add new").count
 
+
+d.info
+
 一个UI对象信息
 {
 	'bounds': {

@@ -93,6 +93,10 @@ response = requests.post('http://httpbin.org/post', data=data)
 print(response.text)
 ```
 
+**编码问题**
+
+response有text与content指响应内容
+
 ## Ip代理
 
 ```python
