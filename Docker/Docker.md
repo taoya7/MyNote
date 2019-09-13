@@ -32,7 +32,7 @@ Docker仓库用来保存镜像
 
 [Download](https://get.daocloud.io/)
 
-
+Docker镜像<https://hub.daocloud.io/>
 
 ### Linux
 
@@ -74,8 +74,7 @@ docker -v
 ```
 
 
-
-![](E:\Tashi\Desktop\Learning\Docker\image\20190619154036.png)
+![](http://itaolaity.com/20190620161505.png)
 
 ```shell
 Usage:
@@ -194,13 +193,16 @@ hub中搜索镜像
 
 ```bash
 service docker start
+service docker stop
+service docker status
+chkconfig docker on #设置开机启动
 ```
 
 ```bash
 docker run hello-world
 ```
 
-![](E:\Tashi\Desktop\Learning\Docker\image\20190619184230.png)
+![](http://itaolaity.com/20190620161541.png)
 
 
 
@@ -255,6 +257,8 @@ docker rmi 镜像ID
 
 ## 容器
 
+容器就像一个类的实例
+
 ### 启动容器
 
 ```bash
@@ -269,7 +273,7 @@ kali# docker run -d -p 8888:8080 tomcat
 771845e1556a72d06614af22e03586f70f288c2349fbd11b18608e5d9c945b16
 ```
 
-![](E:\Tashi\Desktop\Learning\Docker\image\20190620135456.png)
+![](http://itaolaity.com/20190620161558.png)
 
 
 
@@ -322,7 +326,13 @@ docker rm 容器ID
 docker logs 容器ID
 ```
 
-![](E:\Tashi\Desktop\Learning\Docker\image\20190620140136.png)
+![](http://itaolaity.com/20190620161613.png)
+
+### 进入容器
+
+```shell
+docker exec -it [ID] 
+```
 
 
 
@@ -344,7 +354,7 @@ docker images # 查看是否安装成功|拥有
 docker run --name imysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 -d mysql #端口映射
 ```
 
-![](E:\Tashi\Desktop\Learning\Docker\image\QQ截图20190620160648.png)
+![](http://itaolaity.com/20190620161638.png)
 
 **使用自定义MySQL配置文件**
 
@@ -360,13 +370,40 @@ docker run --name imysql2 -v /my/mysql/config.cnf:/etc/mysql/my.cnf -e MYSQL_ROO
 
 
 
+### 部署Nginx
 
+1. 下载Nginx镜像
 
+```shell
+kali# docker pull daocloud.io/library/nginx:1.13.0-alpine
+1.13.0-alpine: Pulling from library/nginx
+b2388ca7fa65: Pull complete 
+7947be538089: Pull complete 
+d16f692df913: Pull complete 
+0dbd6ee41762: Pull complete 
+Digest: sha256:5c36f962c506c379bd63884976489c9c5e700c1496a6e8ea13dc404b1d258f76
+Status: Downloaded newer image for daocloud.io/library/nginx:1.13.0-alpine
+```
 
+2. 启动
 
+```shell
+docker run --name my-nginx -d -p 8080:80 nginx 
+```
 
+```shell
+docker run --name my-nginx \
+			-v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro \
+			-v /some/html:/usr/share/nginx/html:ro \
+			-p 8080:80 \
+			-d nginx
+```
 
+`-v` 参数语法为 `-v host dir:container dir[:ro|rw]`
 
+### 参考
+
+<https://github.com/jaywcjlove/docker-tutorial>
 
 
 

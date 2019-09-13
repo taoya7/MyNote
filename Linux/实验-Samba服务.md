@@ -137,7 +137,7 @@ vim /etc/samba/smb.conf
 
 ```
 [share] #共享参数
-	path = /database
+	path = /share
 	public = yes
 	writable = yes #定义是否可以执行写入操作
 	create mask = 0777
@@ -170,7 +170,6 @@ systemctl restart samba
 
 
 ## 参考
-
 
 [https://www.linuxprobe.com/chapter-12.html](https://www.linuxprobe.com/chapter-12.html)
 

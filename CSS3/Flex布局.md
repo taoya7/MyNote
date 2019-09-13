@@ -35,6 +35,7 @@
 - align-items:center; 垂直居中对齐
 - align-items:baseline; 基线对齐
 
+---
 
 **flex-wrap**用来指定Flex子项是否换行
 

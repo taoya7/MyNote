@@ -93,7 +93,7 @@ d.swipe(sx, sy, ex, ey, 0.5) # swipe for 0.5s(default)
 ```python
 # swipe from point(x0, y0) to point(x1, y1) then to point(x2, y2)
 # time will speed 0.2s bwtween two points
-d.swipe((x0, y0), (x1, y1), (x2, y2), 0.2)
+d.swipe(x1,x2,y1,y2)
 ```
 
 - 拖动
