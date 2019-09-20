@@ -10,3 +10,4 @@ Ajax,全称为Asynchronous JavaScript and Xml,即异步的JavaScript和xml。
 2. 解析内容
 3. 渲染网页
 
+# 

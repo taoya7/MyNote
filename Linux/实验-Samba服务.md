@@ -155,11 +155,28 @@ mkdir /database # 创建分享目录
 chmod -Rf 777 /database # 修改文件目录权限
 ```
 
+**启动**
+
+```shell
+systemctl start|stop smb.service
+```
+
+
+
 **重启服务**
 
 ```shell
 systemctl restart samba
 ```
+
+## 连接
+
+Windows客户端
+
+- 资源管理器
+- 映射网络驱动器
+
+
 
 ## 出现的问题
 
