@@ -1,8 +1,0 @@
-云盘倍速播放
-
-videojs.getPlayers("video-player").html5player.tech_.setPlaybackRate(1.25);
-
-
-### 网易云音乐
-
-http://music.163.com/song/media/outer/url?id=13219299281.mp3

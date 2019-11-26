@@ -1,3 +1,10 @@
+### 属性
+
+- 自定义属性`props`
+
+- 原生属性`attrs`
+- 特殊属性`class` `style`
+
 ## 事件
 
 - 普通事件
@@ -12,6 +19,19 @@
 - `.self ` 只当事件在该元素本身
 - `.once` 事件只触发一次
 - `.passive` 
+
+```html
+<input :value="name" @change="handleChange">
+
+
+methods:{
+	handleChange(e){
+		this.$emit("change", e.target.value)
+	}
+}
+```
+
+
 
 ### 键盘修饰
 

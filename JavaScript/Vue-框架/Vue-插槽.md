@@ -1,10 +1,22 @@
----
-title: Vue-插槽
-date: 2019-05-07 12:11:39
-tags: [Vue]
-categories: ["JavaScript"]
----
+
+
 # 插槽
+
+- 普通插槽
+
+  ```html
+  <templatte slot="xxx"> <template>
+      
+  <templatte v-slot="xxx"> <template>
+  ```
+
+- 作用域插槽
+
+  ```html
+  <templatte slot="xxx" slot-scope="xxx"> <template>
+      
+  <templatte v-slot:xxx="props"> <template>
+  ```
 
 ## slot-实现内容分发
 

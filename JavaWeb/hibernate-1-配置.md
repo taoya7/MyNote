@@ -174,7 +174,7 @@ xxx对应持久化类后面的.hbm.xml是固定写法
 
 - name 类的全路径
 - table 表名。类名与表名一直，table可以省略，如果没有该表，自动创建表
-- catalog
+- catalog 数据库名称
 - proxy 代理设置 为延迟加载提供支持
 - lazy 是否使用延迟加载
 - dynamic-update 指定生成Update SQL 时是否仅包含发生变动的字段

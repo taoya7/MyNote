@@ -20,7 +20,12 @@
    source /etc/profile
    ```
 
-   
+
+**安装**
+
+```
+yum install -y httpd httpd-devel httpd-manual httpd-tools
+```
 
 # Apache
 

@@ -30,8 +30,6 @@ npm -v
 npm -g vue-cli
 ```
 
-
-
 ## 开始
 
 ### 创建项目
@@ -48,16 +46,9 @@ npm -g vue-cli
 - Setup unit tests with Karma + Moch? 是否安装单元测试
 - Setup e2e tests with Nightwatch 是否安装e2e测试
 
-
-
-
 经过上面的确认项目已经搭建起来了。接下来进入项目 安装项目依赖模块`npm install`,然后项目里会多出一个node_modules文件夹，安装的依赖模块都在这个文件夹里面。
 
-
-
-
 ### 目录结构
-
 
 #### Vue-cli 2.x
 
@@ -135,7 +126,6 @@ npm i -g -u @vue/cli
 vue ui
 ```
 
-
 ### 安装iview
 
 **iview**
@@ -178,11 +168,9 @@ new Vue({
 })
 ```
 
-
 ## 项目打包
 
 `vue build`
-
 
 ### 总结
 
@@ -197,4 +185,3 @@ npm install 依赖包
 
 npm run serve #执行
 ```
-

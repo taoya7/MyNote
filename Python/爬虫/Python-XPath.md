@@ -140,6 +140,8 @@ result = html.xpath('//li[@class="item-3"]')
 
 ## 文本获取
 
+text()可以获取选择的标签文本
+
 ```html
 <ul>
     <li>1</li>
